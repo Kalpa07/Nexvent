@@ -1,1 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&family=Raleway&display=swap');
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: false ;
+}
+
+@theme {
+  /* Fonts */
+  --font-playfair: 'Playfair Display', serif;
+  --font-lora: 'Lora', serif;
+  --font-raleway: 'Raleway', sans-serif;
+
+  /* Colors */
+  --color-primary: #1E40AF;
+  --color-secondary: #06B6D4;
+  --color-accent: #F97316;
+  --color-white:#ffffff;
+  --color-black:#000000;
+  --color-neutral:#374151;
+  --color-off-white:#F9FAFB;
+  --color-red:#F34F4F;
+
+}
+
+@layer base {
+  html {
+    font-family: var(--font-raleway);
+  }
+}
+
+
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+
+  .font-lora {
+    font-family: var(--font-lora) !important;
+  }
+
+  .font-raleway {
+    font-family: var(--font-raleway);
+  }
+
+
+  /* Background Color Classes */
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary) !important;
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  .bg-white {
+    background-color: var(--color-white);
+  }
+
+  .bg-black {
+    background-color: var(--color-black);
+  }
+
+  .bg-neutral {
+    background-color: var(--color-neutral);
+  }
+
+  .bg-off-white {
+    background-color: var(--color-off-white);
+  }
+
+  .bg-red {
+    background-color: var(--color-red);
+  }
+
+  /* Text Color Classes */
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .text-white {
+    color: var(--color-white);
+  }
+
+  .text-black {
+    color: var(--color-black);
+  }
+
+  .text-neutral {
+    color: var(--color-neutral);
+  }
+
+  .text-off-white {
+    color: var(--color-off-white);
+  }
+
+  .text-red {
+    color: var(--color-red);
+  }
+
+  /* custom classes */
+
+  .bg-picture{
+    background-image: url('../public/images/header.png');
+    background-repeat: no-repeat;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 28ch;
+    }
+  }
+  
+  .animate-typing {
+    animation: typing 3s steps(30, end), blink .75s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+}
