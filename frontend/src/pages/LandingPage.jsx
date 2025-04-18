@@ -217,7 +217,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="carousel-item h-full">
-          <img src='/images/profile-2.png' className='h-[450px] ml-[120px]'/>
+          <img src='/images/profile-3.png' className='h-[450px] ml-[120px]'/>
           <div className='text-end w-[900px] h-[450px] grid content-center'>
             <h2 className='text-[45px]'>Chloe Bennett</h2>
             <p className='text-[20px]'>Co-founder & Brand Strategist</p>
