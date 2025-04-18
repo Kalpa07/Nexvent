@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useRef, useState, useEffect } from "react";
 import img from '../../public/images/headerImg.png';
 import hostDashboard from '../../public/images/host-dashboard.png';
 import step1Host from '../../public/images/step1host.png';
@@ -8,11 +9,74 @@ import step1Guest from '../../public/images/step1Guest.png';
 import step2Guest from '../../public/images/step2Guest.png';
 import step3Guest from '../../public/images/step3Guest.png';
 import guestDashboard from '../../public/images/Guests-Dashboard.png';
-
+import browseEvent from '../../public/images/browseEvent.png';
+import profile1 from '../../public/images/profil-1.jpg';
+import profile2 from '../../public/images/profile-2.png';
+import profile3 from '../../public/images/profile-3.png';
+import { Instagram, Facebook, Mail }from 'lucide-react';
 
 
 
 const LandingPage = () => {
+
+  const reviews = [
+    {
+      name: "Alice Johnson",
+      role: "Digital Nomad",
+      review: "Absolutely loved the experience! The dashboard is so intuitive.",
+      avatar: "https://i.pravatar.cc/100?img=1"
+    },
+    {
+      name: "Brian Smith",
+      role: "Frequent Traveler",
+      review: "Booking and managing my stays has never been easier.",
+      avatar: "https://i.pravatar.cc/100?img=2"
+    },
+    {
+      name: "Claire Davis",
+      role: "Event Organizer",
+      review: "The analytics help me keep everything in check. So helpful!",
+      avatar: "https://i.pravatar.cc/100?img=3"
+    },
+    {
+      name: "Daniel Lee",
+      role: "Business Host",
+      review: "Effortless and sleek UI, love the performance tracking.",
+      avatar: "https://i.pravatar.cc/100?img=4"
+    },
+    {
+      name: "Emily Zhang",
+      role: "Freelancer",
+      review: "Simple, clean and very user-friendly. Highly recommend!",
+      avatar: "https://i.pravatar.cc/100?img=5"
+    },
+    {
+      name: "Fiona Williams",
+      role: "Entrepreneur",
+      review: "Excellent platform for managing everything in one place. Highly efficient!",
+      avatar: "https://i.pravatar.cc/100?img=6"
+    }
+  ];
+  
+  const carouselRef = useRef(null);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (index + 1) % reviews.length;
+      setIndex(nextIndex);
+
+      const carousel = carouselRef.current;
+      const cardWidth = carousel.children[0].offsetWidth + 16;
+      carousel.scrollTo({
+        left: cardWidth * nextIndex,
+        behavior: "smooth"
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [index]);
+
   return (
     <div>
       {/* Header */}
@@ -27,7 +91,7 @@ const LandingPage = () => {
       </div>
 
       {/* Dashboard Host */}
-      <div className='flex flex-col md:flex-row gap-4 items-center'>
+      <div className='flex flex-col md:flex-row gap-4 items-center mt-[100px]'>
         <div className='md:w-1/2'> 
           <img src={hostDashboard} className='ml-[150px]'/>
         </div>
@@ -40,17 +104,14 @@ const LandingPage = () => {
           <p className="text-neutral bg-secondary pl-[12px] mt-2 ">
           Track your performance, monitor bookings, and gain insights with real-time analytics. Analyze trends, boost earnings, and elevate the guest experience.
           </p>
-        {/* <p className="text-neutral bg-secondary p-1 mt-2 ">
-        Analyze trends, boost earnings, and elevate the guest experience.
-          </p> */}
-          {/* <p className="text-neutral bg-secondary p-1 mt-2 ">
-            maximize your earnings and guest satisfaction.
-          </p>  */}
         </div>
       </div>
 
       {/* step for host */}
-      <div className='flex flex-col md:flex-row gap-4 items-center'>
+      <div>
+        <h1 className='text-center mt-[250px] text-[50px] font-[Lora] italic'>Start Hosting in 3 Easy Steps</h1>
+      </div>
+      <div className='flex flex-col md:flex-row gap-4 items-center mt-[-50px]'>
         <div className='md:w-1/3 p-5 pl-[150px] grid justify-items-center'>
             <div className='flex flex-col items-center mt-[200px]'>
               <div>
@@ -84,7 +145,7 @@ const LandingPage = () => {
                 </div>
               </div>
               <div>
-                <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Track & Analyze</h1>
+                <h1 className='font-playfair font-bold text-[25px] text-center mt-[-8px] tracking-[2px]'>Track & Analyze</h1>
                 <p className='text-center p-[10px]'>Gain valuable insights post-event—view registrations, feedback, and performance metrics in one place.</p>
               </div>
             </div>
@@ -92,16 +153,129 @@ const LandingPage = () => {
       </div>
 
       {/* client dashboard */}
-      <div className='flex flex-col md:flex-row gap-4 items-center bg-secondary h-120 p-30'>
+      <div className='flex flex-col md:flex-row gap-4 items-center bg-secondary h-170 p-30 mt-20'>
         <div className='md:w-1/2 '>
-            <img src={guestDashboard} className=''/>
-            <img src={guestDashboard} className=''/>
+            <img src={browseEvent} className='h-[470px]'/>
+            <img src={guestDashboard} className='h-[470px] -mt-[400px] ml-[200px]'/>
         </div>
         <div className='md:w-1/2 '>
-            <h1 className=''>Guest Dashboard – Your Event Companion</h1>
-            <p className=''>Seamlessly manage your event journey—track upcoming events, view past experiences, and get personalized recommendations, all in one place.</p>
+            <h1 className='font-lora text-[35px] font-extrabold bg-orange-500 w-[116.7%] text-white pl-[10px]'>Guest Dashboard – Your Event Companion</h1>
+            <p className='text-[20px] font-bold mt-[30px] m-[10px] text-[#374151] '>Seamlessly manage your event journey—track upcoming events, view past experiences, and get personalized recommendations, all in one place.</p>
         </div>
       </div>
+
+      {/* step for guest */}
+      <div>
+        <h1 className='text-center mt-[250px] text-[50px] font-[Lora] italic'>Easy Steps to Explore Events</h1>
+      </div>
+      <div className='flex flex-col md:flex-row gap-4 items-center mt-[-30px]'>
+        <div className='md:w-1/3 p-5 pl-[150px] grid justify-items-center'>
+            <div className='flex flex-col items-center mt-[-50px]'>
+              <div>
+                <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>1</h1>
+                <img src={step1Guest} className='h-[320px] w-[320px]'/>
+              </div>
+              <div>
+                <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Discover & Register</h1>
+                <p className='text-center p-[10px]'>Browse a variety of events across genres and themes. Discover what sparks your interest and register effortlessly in just a few clicks.</p>
+              </div>
+            </div>
+        </div>
+        <div className='md:w-1/3 p-5 pr-[75px] pl-[75px] grid justify-items-center'>
+            <div className='flex flex-col items-center mt-[200px]'>
+              <div>
+                <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>2</h1>
+                <img src={step2Guest} className='h-[320px] w-[320px]'/>
+              </div>
+              <div>
+                <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Join the Experience</h1>
+                <p className='text-center p-[10px]'>Attend your chosen events online or in-person and connect with like-minded individuals.</p>
+              </div>
+            </div>
+        </div>
+        <div className='md:w-1/3 p-5 pr-[150px] grid justify-items-center'>
+            <div className='flex flex-col items-center mt-[-50px]'>
+              <div >
+                <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>3</h1>
+                <div className='h-[350px] grid content-center'>
+                  <img src={step3Guest} className='h-[270px]'/>
+                </div>
+              </div>
+              <div>
+                <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Rate & Reflect</h1>
+                <p className='text-center p-[10px]'>Help us improve by rating events and sharing your experience with the community.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+      {/* meet founders */}
+      <div>
+        <h1 className='text-center mt-[150px] text-[50px] font-[Lora] italic'>Our Roots</h1>
+      </div>
+      <div className="carousel carousel-vertical rounded-box h-130 w-full mt-20">
+        <div className="carousel-item h-full ">
+          <img src={profile1} className='h-[450px] ml-[120px]'/>
+          <div className='text-end w-[900px] h-[450px] grid content-center'>
+            <h2 className='text-[45px]'>Emily Brooks</h2>
+            <p className='text-[20px]'>Co-founder & Product Designer </p>
+            <p className='text-[25px]'>With a sharp eye for detail and a passion for user-centric design, Emily turns complex workflows into beautifully simple interfaces.</p>
+          </div>
+        </div>
+        <div className="carousel-item h-full">
+          <img src={profile2} className='h-[450px] ml-[120px]'/>
+          <div className='text-end w-[900px] h-[450px] grid content-center'>
+            <h2 className='text-[45px]'>Nathan Reid</h2>
+            <p className='text-[20px]'>Co-founder & Tech Lead</p>
+            <p className='text-[25px]'>From code to cloud, Nathan builds scalable systems that power seamless event experiences and real-time insights.</p>
+          </div>
+        </div>
+        <div className="carousel-item h-full">
+          <img src={profile3} className='h-[450px] ml-[120px]'/>
+          <div className='text-end w-[900px] h-[450px] grid content-center'>
+            <h2 className='text-[45px]'>Chloe Bennett</h2>
+            <p className='text-[20px]'>Co-founder & Brand Strategist</p>
+            <p className='text-[25px]'>The voice and vibe behind the platform. Chloe crafts brand stories that resonate and build lasting connections with audiences.</p>
+          </div>
+        </div>
+      </div>
+
+
+      {/* reviews */}
+      <div>
+        <h1 className='text-center mt-[100px] text-[50px] font-[Lora] italic'>Your Words, Our Pride</h1>
+      </div>
+      <div
+      ref={carouselRef}
+      className="carousel carousel-center bg-base-100 rounded-box w-full mt-20 space-x-4 p-4 overflow-x-auto scroll-smooth whitespace-nowrap"
+    >
+      {reviews.map((r, i) => (
+        <div key={i} className="carousel-item inline-block bg-white p-6 rounded-xl border border-gray-300 shadow-inner w-60 h-40">
+          <div className="flex gap-3 items-center mb-3">
+            <img src={r.avatar} alt={r.name} className="w-12 h-12 rounded-full" />
+            <div>
+              <p className="font-semibold">{r.name}</p>
+              <p className="text-sm text-gray-500">{r.role}</p>
+            </div>
+          </div>
+          <div className='h-20 mt-10'>
+            <p className="text-gray-700 italic text-wrap">"{r.review}"</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+      {/* footer */}
+      <div className='w-full bg-primary h-10 flex items-center justify-between px-4 mt-20'>
+        <h4 className='text-white text-center flex-1 ml-5'>Copyright @Nexvent.com</h4>
+        <div className='flex gap-4'>
+          <div className=''><Instagram className='text-white'></Instagram> </div>
+          <div className=''><Facebook className='text-white'></Facebook> </div>
+          <div className=''><Mail className='text-white'></Mail> </div>
+        </div>
+      </div>
+
     </div>
   )
 }
