@@ -1,21 +1,6 @@
 import React from 'react';
 import { useRef, useState, useEffect } from "react";
-import img from '../../public/images/headerImg.png';
-import hostDashboard from '../../public/images/host-dashboard.png';
-import step1Host from '../../public/images/step1host.png';
-import step2Host from '../../public/images/step2host.png';
-import step3Host from '../../public/images/step3host.png';
-import step1Guest from '../../public/images/step1Guest.png';
-import step2Guest from '../../public/images/step2Guest.png';
-import step3Guest from '../../public/images/step3Guest.png';
-import guestDashboard from '../../public/images/Guests-Dashboard.png';
-import browseEvent from '../../public/images/browseEvent.png';
-import profile1 from '../../public/images/profil-1.jpg';
-import profile2 from '../../public/images/profile-2.png';
-import profile3 from '../../public/images/profile-3.png';
 import { Instagram, Facebook, Mail }from 'lucide-react';
-
-
 
 const LandingPage = () => {
 
@@ -86,21 +71,21 @@ const LandingPage = () => {
           <h4 className='font-lora tracking-wide ml-[120px] mt-[50px] text-2xl w-[625px]'>From creative to professional, explore events that speak to you—and join with ease.</h4>
         </div>
         <div className='md:w-1/2 h-250'>
-          <img src={img} className='mt-[150px] ml-[-10px]'/>
+          <img src="/images/headerImg.png" className='mt-[150px] ml-[-10px]'/>
         </div>
       </div>
 
       {/* Dashboard Host */}
       <div className='flex flex-col md:flex-row gap-4 items-center mt-[100px]'>
         <div className='md:w-1/2'> 
-          <img src={hostDashboard} className='ml-[150px]'/>
+          <img src='/images/host-dashboard.png' className='ml-[150px]'/>
         </div>
         <div className=' md:w-1/2'>
-          <h1  className=' bg-secondary'>
+          <div  className=' bg-secondary'>
             <h1 className="relative w-[28ch] border-r-4 pl-[12px] border-white whitespace-nowrap overflow-hidden text-3xl font-bold animate-typing  p-1 tracking-wide text-neutral">
               Welcome to Your Host Dashboard.
             </h1>
-          </h1>
+          </div>
           <p className="text-neutral bg-secondary pl-[12px] mt-2 ">
           Track your performance, monitor bookings, and gain insights with real-time analytics. Analyze trends, boost earnings, and elevate the guest experience.
           </p>
@@ -116,7 +101,7 @@ const LandingPage = () => {
             <div className='flex flex-col items-center mt-[200px]'>
               <div>
                 <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>1</h1>
-                <img src={step1Host} className='h-[320px] w-[320px]'/>
+                <img src='/images/step1host.png' className='h-[320px] w-[320px]'/>
               </div>
               <div>
                 <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Plan & Publish</h1>
@@ -128,7 +113,7 @@ const LandingPage = () => {
             <div className='flex flex-col items-center mt-[-50px]'>
               <div>
                 <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>2</h1>
-                <img src={step2Host} className='h-[320px] w-[320px]'/>
+                <img src='/images/step2host.png' className='h-[320px] w-[320px]'/>
               </div>
               <div>
                 <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Run Your Event</h1>
@@ -141,7 +126,7 @@ const LandingPage = () => {
               <div >
                 <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>3</h1>
                 <div className='h-[350px] grid content-center'>
-                  <img src={step3Host} className=''/>
+                  <img src='/images/step3host.png' className=''/>
                 </div>
               </div>
               <div>
@@ -155,8 +140,8 @@ const LandingPage = () => {
       {/* client dashboard */}
       <div className='flex flex-col md:flex-row gap-4 items-center bg-secondary h-170 p-30 mt-20'>
         <div className='md:w-1/2 '>
-            <img src={browseEvent} className='h-[470px]'/>
-            <img src={guestDashboard} className='h-[470px] -mt-[400px] ml-[200px]'/>
+            <img src='/images/browseEvent.png' className='h-[470px]'/>
+            <img src='/images/Guests-Dashboard.png' className='h-[470px] -mt-[400px] ml-[200px]'/>
         </div>
         <div className='md:w-1/2 '>
             <h1 className='font-lora text-[35px] font-extrabold bg-orange-500 w-[116.7%] text-white pl-[10px]'>Guest Dashboard – Your Event Companion</h1>
@@ -173,7 +158,7 @@ const LandingPage = () => {
             <div className='flex flex-col items-center mt-[-50px]'>
               <div>
                 <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>1</h1>
-                <img src={step1Guest} className='h-[320px] w-[320px]'/>
+                <img src='/images/step1Guest.png' className='h-[320px] w-[320px]'/>
               </div>
               <div>
                 <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Discover & Register</h1>
@@ -185,7 +170,7 @@ const LandingPage = () => {
             <div className='flex flex-col items-center mt-[200px]'>
               <div>
                 <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>2</h1>
-                <img src={step2Guest} className='h-[320px] w-[320px]'/>
+                <img src='/images/step2Guest.png' className='h-[320px] w-[320px]'/>
               </div>
               <div>
                 <h1 className='font-playfair font-bold text-[25px] text-center tracking-[2px]'>Join the Experience</h1>
@@ -198,7 +183,7 @@ const LandingPage = () => {
               <div >
                 <h1 className='font-playfair text-[100px] leading-[100px] mb-[-90px] font-bold'>3</h1>
                 <div className='h-[350px] grid content-center'>
-                  <img src={step3Guest} className='h-[270px]'/>
+                  <img src='/images/step3Guest.png' className='h-[270px]'/>
                 </div>
               </div>
               <div>
@@ -216,7 +201,7 @@ const LandingPage = () => {
       </div>
       <div className="carousel carousel-vertical rounded-box h-130 w-full mt-20">
         <div className="carousel-item h-full ">
-          <img src={profile1} className='h-[450px] ml-[120px]'/>
+          <img src='/images/profil-1.jpg' className='h-[450px] ml-[120px]'/>
           <div className='text-end w-[900px] h-[450px] grid content-center'>
             <h2 className='text-[45px]'>Emily Brooks</h2>
             <p className='text-[20px]'>Co-founder & Product Designer </p>
@@ -224,7 +209,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="carousel-item h-full">
-          <img src={profile2} className='h-[450px] ml-[120px]'/>
+          <img src='/images/profile-2.png' className='h-[450px] ml-[120px]'/>
           <div className='text-end w-[900px] h-[450px] grid content-center'>
             <h2 className='text-[45px]'>Nathan Reid</h2>
             <p className='text-[20px]'>Co-founder & Tech Lead</p>
@@ -232,7 +217,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="carousel-item h-full">
-          <img src={profile3} className='h-[450px] ml-[120px]'/>
+          <img src='/images/profile-2.png' className='h-[450px] ml-[120px]'/>
           <div className='text-end w-[900px] h-[450px] grid content-center'>
             <h2 className='text-[45px]'>Chloe Bennett</h2>
             <p className='text-[20px]'>Co-founder & Brand Strategist</p>

@@ -9,7 +9,7 @@ const Navbar = () => {
 
       <div className="navbar bg-base-100 ">
         <div className="flex-1">
-            <img src="../../public/images/Logo-white.png" className='ml-[20px]' />
+            <img src="/images/Logo-white.png" className='ml-[20px]' />
         </div>
         <div className="flex gap-2">
             <label className="btn btn-circle border-none swap swap-rotate">
