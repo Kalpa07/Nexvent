@@ -1,0 +1,47 @@
+{
+  "reviews": [
+    {
+      "name": "Alice Johnson",
+      "role": "Digital Nomad",
+      "review": "Absolutely loved the experience! The dashboard is so intuitive.",
+      "avatar": "https://i.pravatar.cc/100?img=1"
+    },
+
+    {
+      "name": "Alice Johnson",
+      "role": "Digital Nomad",
+      "review": "Absolutely loved the experience! The dashboard is so intuitive.",
+      "avatar": "https://i.pravatar.cc/100?img=1"
+    },
+    {
+      "name": "Brian Smith",
+      "role": "Frequent Traveler",
+      "review": "Booking and managing my stays has never been easier.",
+      "avatar": "https://i.pravatar.cc/100?img=2"
+    },
+    {
+      "name": "Claire Davis",
+      "role": "Event Organizer",
+      "review": "The analytics help me keep everything in check. So helpful!",
+      "avatar": "https://i.pravatar.cc/100?img=3"
+    },
+    {
+      "name": "Daniel Lee",
+      "role": "Business Host",
+      "review": "Effortless and sleek UI, love the performance tracking.",
+      "avatar": "https://i.pravatar.cc/100?img=4"
+    },
+    {
+      "name": "Emily Zhang",
+      "role": "Freelancer",
+      "review": "Simple, clean and very user-friendly. Highly recommend!",
+      "avatar": "https://i.pravatar.cc/100?img=5"
+    },
+    {
+      "name": "Fiona Williams",
+      "role": "Entrepreneur",
+      "review": "Excellent platform for managing everything in one place. Highly efficient!",
+      "avatar": "https://i.pravatar.cc/100?img=6"
+    }
+  ]
+}

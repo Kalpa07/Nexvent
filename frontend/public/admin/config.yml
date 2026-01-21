@@ -1,0 +1,16 @@
+collections:
+  - name: "reviews"
+    label: "Reviews"
+    files:
+      - label: "User Reviews"
+        name: "reviews"
+        file: "src/content/reviews.json"
+        fields:
+          - label: "Reviews List"
+            name: "reviews"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Review", name: "review", widget: "text" }
+              - { label: "Avatar URL", name: "avatar", widget: "string" }
